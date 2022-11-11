@@ -5,7 +5,7 @@ import Todo from './components/todo'
 import { AiOutlinePlus } from 'react-icons/ai'
 
 const styles = {
-  bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#141e30] to-[#243b55]`,
+  bg: `min-h-screen min-w-screen p-4 bg-gradient-to-r from-[#141e30] to-[#243b55]`,
   container: `bg-slate-100 max-w-[500px] w-full m-auto rounded-md shadow-xl p-4 mt-20`,
   heading: `text-3xl font-bold text-center text-gray-800 p-2`,
   form : `flex justify-between`,
