@@ -4,16 +4,6 @@ import { db } from './firebase-config'
 import Todo from './components/todo'
 import { AiOutlinePlus } from 'react-icons/ai'
 
-const styles = {
-  bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#141e30] to-[#243b55]`,
-  container: `bg-slate-100 max-w-[500px] w-full m-auto rounded-md shadow-xl p-4 mt-20`,
-  heading: `text-3xl font-bold text-center text-gray-800 p-2`,
-  form : `flex justify-between`,
-  input: `border p-2 w-full text-xl`,
-  button: `border p-4 ml-2 bg-green-400 text-white`,
-  count: `text-center p-2`
-} 
-
 function App() {
 
   const [todos, setTodos] = useState([ ]);
@@ -59,18 +49,18 @@ function App() {
   }
 
   return (
-    <div className={styles.bg}>
-      <div className={styles.container}>
-        <h3 className={styles.heading}>To-Do App</h3>
-        <form onSubmit={createTodo} className={styles.form}>
+    <div className="h-screen w-screen p-4">
+      <div className="bg-slate-100 max-w-[500px] w-full m-auto rounded-md shadow-xl p-4 mt-20">
+        <h3 className="text-3xl font-bold text-center text-gray-800 p-2">To Do</h3>
+        <form onSubmit={createTodo} className="flex justify-between">
           <input 
             value={input} 
             onChange={(e) => setInput(e.target.value)} 
-            className={styles.input} 
+            className="p-2 w-full text-xl rounded-md shadow-md"
             type="text" 
             placeholder="Add To-Do"
           />
-          <button className={styles.button}><AiOutlinePlus size={30}/></button>
+          <button className="p-4 ml-2 bg-green-400 text-white rounded-md shadow-md"><AiOutlinePlus size={30}/></button>
         </form>
         <ul>
           {todos.map((todo, index) => (
@@ -82,7 +72,7 @@ function App() {
             />
           ))}
         </ul>
-        {todos.length < 1 ? null : <p className={styles.count}>{`You have ${todos.length} To-Do's`}</p>}
+        {todos.length < 1 ? null : <p className="text-center p-2 animate-pulse">{`You have ${todos.length} To-Do's`}</p>}
       </div>
     </div>
   );
